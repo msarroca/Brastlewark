@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import getApiInfo from "../../brastlewark-api";
 import ResultsPanel from "../results";
+import "./index.scss";
 
 function SearchPanel() {
   const [population, setPopulation] = useState([]);
@@ -12,7 +13,7 @@ function SearchPanel() {
 
   const renderList = () => {
     return (
-      <div>
+      <Fragment>
         {population
           .filter(
             population =>
@@ -21,11 +22,11 @@ function SearchPanel() {
               population.hair_color.toLowerCase().includes(searchText)
           )
           .map(character => (
-            <div key={character.id}>
+            <Fragment key={character.id}>
               <ResultsPanel character={character}></ResultsPanel>
-            </div>
+            </Fragment>
           ))}
-      </div>
+      </Fragment>
     );
   };
 
@@ -34,16 +35,15 @@ function SearchPanel() {
   });
 
   return (
-    <div>
-      <h2>Search people</h2>
-      <input type="text" onChange={handleChange}></input>
-      <div className="c-results">
-        <div className="c-results--title"></div>
-        <div className="c-results--info">
-          {searchText !== "" && renderList()}
-        </div>
+    <Fragment>
+      <div className="c-title">
+        <h2>Search population</h2>
       </div>
-    </div>
+      <div className="c-searcharea">
+        <input type="text" onChange={handleChange}></input>
+      </div>
+      <div className="c-results">{searchText !== "" && renderList()}</div>
+    </Fragment>
   );
 }
 

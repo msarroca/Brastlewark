@@ -1,11 +1,11 @@
-import React, { useState, Fragment } from "react";
+import React from "react";
+import "./index.scss";
 
-function DetailPanel({ character, onClose }) {
+function DetailPanel({ character }) {
   return (
-    <div>
-      <div>{character.professions}</div>
-      <div>{character.friends}</div>
-      <button onClick={onClose}>Close</button>
+    <div className="c-moredetails">
+      <div className="c-moredetails--jobs">{`Professions:${character.professions}`}</div>
+      <div className="c-moredetails--friends">{`Friends:${character.friends}`}</div>
     </div>
   );
 }

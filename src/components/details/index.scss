@@ -1,0 +1,14 @@
+.c-moredetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  &--jobs {
+    text-align: center;
+  }
+  &--friends {
+    text-align: center;
+  }
+}
