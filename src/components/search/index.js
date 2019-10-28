@@ -5,7 +5,6 @@ import ResultsPanel from "../results";
 function SearchPanel() {
   const [population, setPopulation] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [noResults, setNoResults] = useState(true);
 
   const handleChange = event => {
     setSearchText(event.target.value);
@@ -30,7 +29,7 @@ function SearchPanel() {
     );
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     getApiInfo().then(population => setPopulation(population));
   });
 
@@ -41,7 +40,6 @@ function SearchPanel() {
       <div className="c-results">
         <div className="c-results--title"></div>
         <div className="c-results--info">
-          {renderList() && searchText !== "" && <div>No results</div>}
           {searchText !== "" && renderList()}
         </div>
       </div>
