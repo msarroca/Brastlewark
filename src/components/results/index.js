@@ -14,10 +14,11 @@ function ResultsPanel({ character }) {
 
   return (
     <Fragment>
-      <div className="c-list" id={character.id}>
-        <img src={character.thumbnail} alt="image"></img>
+      <div className="c-list">
+        <img src={character.thumbnail} alt="gnomes"></img>
         <p>{character.name}</p>
         <p>{character.age}</p>
+        <p>{character.hair_color}</p>
         <p>{character.height}</p>
         <button onClick={handleViewMoreInfo}>More Info</button>
       </div>

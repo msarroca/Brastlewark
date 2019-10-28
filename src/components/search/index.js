@@ -5,6 +5,7 @@ import ResultsPanel from "../results";
 function SearchPanel() {
   const [population, setPopulation] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [noResults, setNoResults] = useState(true);
 
   const handleChange = event => {
     setSearchText(event.target.value);
@@ -14,9 +15,16 @@ function SearchPanel() {
     return (
       <div>
         {population
-          .filter(population => population.name.includes(searchText))
+          .filter(
+            population =>
+              population.name.toLowerCase().includes(searchText) ||
+              population.age == searchText ||
+              population.hair_color.toLowerCase().includes(searchText)
+          )
           .map(character => (
-            <ResultsPanel character={character}></ResultsPanel>
+            <div key={character.id}>
+              <ResultsPanel character={character}></ResultsPanel>
+            </div>
           ))}
       </div>
     );
@@ -30,10 +38,10 @@ function SearchPanel() {
     <div>
       <h2>Search people</h2>
       <input type="text" onChange={handleChange}></input>
-      <button type="submit">Search</button>
       <div className="c-results">
         <div className="c-results--title"></div>
         <div className="c-results--info">
+          {renderList() && searchText !== "" && <div>No results</div>}
           {searchText !== "" && renderList()}
         </div>
       </div>
