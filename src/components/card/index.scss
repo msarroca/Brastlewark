@@ -1,6 +1,6 @@
 $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-.c-list {
+.card-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +10,16 @@ $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 25px;
   box-shadow: $box-shadow;
   padding: 10px;
+
+  &--name {
+    font-weight: bold;
+  }
+
+  p {
+    margin: 6px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
 
   &--details {
     display: flex;
@@ -21,7 +31,9 @@ $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #4ac29a;
     color: white;
     border-radius: 5px;
+    margin-top: 10px;
     box-shadow: $box-shadow;
+    outline: none;
   }
 
   img {
@@ -30,5 +42,6 @@ $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 5px;
     border-radius: 50%;
     box-shadow: $box-shadow;
+    margin-bottom: 8px;
   }
 }

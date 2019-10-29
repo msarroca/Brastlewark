@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react";
 import DetailPanel from "../details";
 import "./index.scss";
 
-function ResultsPanel({ character }) {
+function Card({ character }) {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleViewMoreInfo = () => {
@@ -11,14 +11,14 @@ function ResultsPanel({ character }) {
 
   return (
     <Fragment>
-      <div className="c-list">
+      <div className="card-list">
         <img src={character.thumbnail} alt="gnomes"></img>
-        <div className="c-list--details">
-          <p>{character.name}</p>
-          <p>{`Age:${character.age}`}</p>
-          <p>{`Hair Color:${character.hair_color}`}</p>
-          <p>{`Height:${character.height}`}</p>
-          <button className="c-list--button" onClick={handleViewMoreInfo}>
+        <div className="card-list--details">
+          <p className="card-list--name">{character.name}</p>
+          <p>{`Age:\u00A0${character.age}`}</p>
+          <p>{`Hair Color:\u00A0${character.hair_color}`}</p>
+          <p>{`Height:\u00A0${character.height}`}</p>
+          <button className="card-list--button" onClick={handleViewMoreInfo}>
             More Info
           </button>
         </div>
@@ -30,4 +30,4 @@ function ResultsPanel({ character }) {
   );
 }
 
-export default ResultsPanel;
+export default Card;

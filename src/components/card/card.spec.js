@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import ResultsPanel from "./index";
 import "../../setupTests";
-import DetailPanel from "../details";
+import Detail from "../details";
 
 describe("Results Panel", () => {
   const dummyProps = {
@@ -20,11 +20,20 @@ describe("Results Panel", () => {
   it("renders ResultsPanel Component", () => {
     expect(wrapper).toBeTruthy();
   });
-  it("should be selecteable by classname c-results", () => {
-    expect(wrapper.find(".c-list").length).toBe(1);
+  it("should be selecteable by classname card-list", () => {
+    expect(wrapper.find(".card-list").length).toBe(1);
+  });
+  it("should be selecteable by classname card-list--details", () => {
+    expect(wrapper.find(".card-list--details").length).toBe(1);
+  });
+  it("should be selecteable by classname card-list--name", () => {
+    expect(wrapper.find(".card-list--name").length).toBe(1);
+  });
+  it("should be selecteable by classname card-list--button", () => {
+    expect(wrapper.find(".card-list--button").length).toBe(1);
   });
   it("should be disable detail panel when showDetails is true", () => {
-    expect(wrapper.find(DetailPanel).length).toBe(0);
+    expect(wrapper.find(Detail).length).toBe(0);
   });
   it("should be a button", () => {
     expect(wrapper.find("button").length).toBe(1);
