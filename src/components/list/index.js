@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import getApiInfo from "../../brastlewark-api";
 import Card from "../card";
 import "./index.scss";
+import { TITLE, DESCRIPTION } from "../../constants";
 
 function List() {
   const [population, setPopulation] = useState([]);
@@ -37,8 +38,8 @@ function List() {
   return (
     <Fragment>
       <div className="list-title">
-        <h2>Search population</h2>
-        <h3>Yo can search population by age, hair color and name</h3>
+        <h2>{TITLE}</h2>
+        <h3>{DESCRIPTION}</h3>
       </div>
       <div className="list-searcharea">
         <input
