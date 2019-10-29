@@ -17,6 +17,10 @@ Users can:
 
 In the project directory, you can run:
 
+#### `yarn install`
+
+Install dependecies.<br />
+
 #### `yarn start`
 
 Runs the app in the development mode.<br />
