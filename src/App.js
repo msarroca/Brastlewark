@@ -1,10 +1,10 @@
 import React from "react";
-import SearchPanel from "./components/search";
+import List from "./components/list";
 
 function App() {
   return (
     <div className="App">
-      <SearchPanel></SearchPanel>
+      <List></List>
     </div>
   );
 }
