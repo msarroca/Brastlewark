@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Easily search the gnome you are looking for, and check its details.
+Easily search the gnome popultaion, and check details.
 
 ![Screenshot](images/image.png)
 
